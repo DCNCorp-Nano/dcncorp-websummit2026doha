@@ -24,11 +24,17 @@ document.querySelector('.registration-form').addEventListener('submit', function
     const formData = new FormData(this);
     
     // In a real application, you would send this data to a server
-    // For now, we'll just show a success message
-    alert('Thank you for registering your interest! We will contact you soon.');
+    // For now, we'll show a success message inline
+    const successMessage = document.getElementById('successMessage');
+    successMessage.classList.add('show');
     
     // Reset the form
     this.reset();
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+        successMessage.classList.remove('show');
+    }, 5000);
 });
 
 // Add scroll effect to header

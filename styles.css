@@ -17,6 +17,19 @@ body {
     padding: 0 20px;
 }
 
+/* Accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* Header and Navigation */
 header {
     background: #1a1a1a;
@@ -222,6 +235,7 @@ nav {
 .registration {
     padding: 80px 20px;
     background: #f9f9f9;
+    position: relative;
 }
 
 .registration h2 {
@@ -281,6 +295,32 @@ nav {
 
 .submit-button:hover {
     background: #764ba2;
+}
+
+.success-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #4caf50;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.success-message.show {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */

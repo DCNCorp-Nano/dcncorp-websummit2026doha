@@ -97,10 +97,14 @@
                 <h3>Be Part of Tech's Biggest Event in 2026</h3>
                 <p>Join thousands of innovators, entrepreneurs, and industry leaders. Early registration opens soon.</p>
                 <form class="registration-form">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="text" placeholder="Company" required>
-                    <select required>
+                    <label for="fullname" class="visually-hidden">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+                    <label for="email" class="visually-hidden">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    <label for="company" class="visually-hidden">Company</label>
+                    <input type="text" id="company" name="company" placeholder="Company" required>
+                    <label for="role" class="visually-hidden">Select Your Role</label>
+                    <select id="role" name="role" required>
                         <option value="">Select Your Role</option>
                         <option value="founder">Founder/CEO</option>
                         <option value="investor">Investor</option>
@@ -109,6 +113,9 @@
                         <option value="other">Other</option>
                     </select>
                     <button type="submit" class="submit-button">Submit</button>
+                    <div class="success-message" id="successMessage">
+                        Thank you for registering your interest! We will contact you soon.
+                    </div>
                 </form>
             </div>
         </section>
@@ -116,7 +123,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 DCNCorp. All rights reserved. Web Summit 2026 Doha.</p>
+            <p>&copy; 2024 DCNCorp. All rights reserved. Web Summit 2026 Doha.</p>
             <div class="footer-links">
                 <a href="#privacy">Privacy Policy</a>
                 <a href="#terms">Terms of Service</a>
