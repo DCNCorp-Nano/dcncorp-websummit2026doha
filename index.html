@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCN Corp - Web Summit 2026 Doha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .tagline em {
+            font-style: italic;
+        }
+
+        .subheading {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        .content-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .problem, .solution {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .problem {
+            background: #fff5f5;
+            border-left: 4px solid #e53e3e;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #38a169;
+        }
+
+        .benefits {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .calendly-link {
+            display: inline-block;
+            font-size: 1.2em;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+
+        .calendly-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .qr-code {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .qr-code img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .required::after {
+            content: " *";
+            color: #e53e3e;
+        }
+
+        button[type="submit"] {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .success-message {
+            display: none;
+            background: #f0fff4;
+            border: 2px solid #38a169;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .success-message h3 {
+            color: #38a169;
+            margin-bottom: 20px;
+        }
+
+        .success-message .secondary-cta {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .success-message .secondary-cta:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #764ba2;
+        }
+
+        .footer-note {
+            color: #718096;
+            font-style: italic;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reproducibly Engineered Nanoscale coatings for Next‑Generation Plasmonics & Surface Sensing</h1>
+            <p class="tagline">Diagnostics at the <em>Speed of Life</em></p>
+            <p class="subheading">
+                DCN Corp® proprietary 9 Combination (9c) nano‑dip coating protocol produces controlled nanostructured 
+                surfaces that enhance Surface Plasmon Resonance (SPR) (and Surface‑enhanced Raman scattering, SERS) 
+                signals for diagnostics, industrial, and environmental applications while remaining compatible with 
+                existing platforms.
+            </p>
+        </header>
+
+        <div class="content-section">
+            <h2>Problem → Solution</h2>
+            
+            <div class="problem-solution">
+                <div class="problem">
+                    <h3>Problem:</h3>
+                    <p>
+                        Unfortunately, presently SPR/SERS surfaces and systems often lack reproducibility, 
+                        limiting their sensitivity and use in applications.
+                    </p>
+                </div>
+                
+                <div class="solution">
+                    <h3>Potential Solution:</h3>
+                    <p>
+                        Our patent‑pending 9c dip coating protocol could deliver consistent nanostructured surfaces 
+                        with enhanced signals, addressing reproducibility and enabling broader deployment.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Benefits</h2>
+            <ul class="benefits">
+                <li>1). Higher sensitivity & reproducibility</li>
+                <li>2). Compatible with existing SPR/SERS platforms</li>
+                <li>3). Potentially scalable and reproducible manufacturing</li>
+                <li>4). Could enable new diagnostic solutions, industrial, and environmental applications</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2>Schedule an Intro Meeting at Web Summit 2026 – Doha, Qatar</h2>
+            <a href="https://calendly.com/dcncorp-info/30min" class="calendly-link" target="_blank">
+                calendly.com/dcncorp-info/30min
+            </a>
+            <div class="qr-code">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://calendly.com/dcncorp-info/30min" 
+                     alt="Calendly QR Code">
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Lead Capture Form</h2>
+            <form id="leadForm">
+                <div class="form-group">
+                    <label for="fullName" class="required">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="required">E‑mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company" class="required">Company</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="interest" class="required">Interest area</label>
+                    <select id="interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="Investor">Investor</option>
+                        <option value="Corporate">Corporate</option>
+                        <option value="Researcher">Researcher</option>
+                        <option value="University">University</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reasons">Reasons for connecting (optional)</label>
+                    <textarea id="reasons" name="reasons"></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <h3>Thank you for your interest!</h3>
+                <p>We've received your information and will be in touch soon.</p>
+                <a href="https://calendly.com/dcncorp-info/30min" class="secondary-cta" target="_blank">
+                    Schedule a Meeting on Calendly
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>🌐 Website:</span>
+                        <a href="https://dcncorp.com" target="_blank">dcncorp.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧 E‑mail:</span>
+                        <a href="mailto:info@dcncorp.com">info@dcncorp.com</a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>💼 LinkedIn:</span>
+                        <a href="https://www.linkedin.com/company/dcn-corporation-limited/" target="_blank">
+                            linkedin.com/company/dcn-corporation-limited
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <span>🐦 Twitter (X):</span>
+                        <a href="https://x.com/DCN_Corp" target="_blank">@DCN_Corp</a>
+                    </div>
+                </div>
+                <p class="footer-note">
+                    Note: DCN Corp® is participating in Web Summit 2026 Doha – ALPHA Start‑up Program.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                company: document.getElementById('company').value,
+                interest: document.getElementById('interest').value,
+                reasons: document.getElementById('reasons').value
+            };
+
+            // Log to console (in production, this would send to a backend)
+            console.log('Form submitted:', formData);
+
+            // Hide form and show success message
+            document.getElementById('leadForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        });
+    </script>
+</body>
+</html>
