@@ -1,0 +1,17 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#400080;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad1)"/>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">9c Nano-Dip Coating</text>
+  <text x="400" y="320" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle">SPR/SERS Enhanced Surface</text>
+  <circle cx="200" cy="450" r="30" fill="rgba(255,255,255,0.3)" />
+  <circle cx="280" cy="420" r="25" fill="rgba(255,255,255,0.25)" />
+  <circle cx="350" cy="460" r="35" fill="rgba(255,255,255,0.2)" />
+  <circle cx="450" cy="440" r="28" fill="rgba(255,255,255,0.3)" />
+  <circle cx="520" cy="470" r="32" fill="rgba(255,255,255,0.25)" />
+  <circle cx="600" cy="430" r="26" fill="rgba(255,255,255,0.2)" />
+</svg>
