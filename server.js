@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
 
@@ -8,11 +7,11 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-// Serve static files (index.html, assets)
-app.use(express.static(path.join(__dirname)));
+// Serve static files from public directory only
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Lead capture endpoint
 app.post('/api/websummit2026Qatar/lead', (req, res) => {

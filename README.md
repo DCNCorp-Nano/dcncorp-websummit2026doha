@@ -184,12 +184,13 @@ Health check endpoint.
 
 ```
 .
-├── index.html           # Main landing page
 ├── server.js           # Express server with API endpoints
 ├── package.json        # Node.js dependencies
-├── assets/
-│   ├── dcn_websummit_2026_hero.png  # Hero image
-│   └── calendly_qr.png              # Calendly QR code
+├── public/
+│   ├── index.html      # Main landing page
+│   └── assets/
+│       ├── dcn_websummit_2026_hero.svg  # Hero image
+│       └── calendly_qr.svg              # Calendly QR code
 └── README.md           # This file
 ```
 
